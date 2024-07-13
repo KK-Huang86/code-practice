@@ -4,12 +4,17 @@
 
 function humanReadableTimer(seconds) {
   // 實作在這裡
-  let hourTime = Math.floor(seconds / (60 * 60));
-  seconds %= 3600;
-  let minTime = Math.floor(seconds / 60);
-  seconds %= 60;
+  const hourTime = Math.floor(seconds / (60 * 60)); //計算有幾小時，並透過math.floor回傳計算結果的最大整數
+  seconds %= 3600; //經過計算小時後剩餘的秒數
+  const minTime = Math.floor(seconds / 60); //計算有幾分鐘，並透過math.floor回傳計算結果的最大整數
+  seconds %= 60; //經過計算分鐘後剩餘的秒數
 
-  return `${hourTime}:${minTime}:${seconds}`;
+  function fillIn(input) {
+    return input.toString().padStart(2, "0");
+    //設一個函數，先將數字轉為字串，再透過.padStart()的方式檢查運算的時間是否為兩位數，不足兩位數者，補一個0
+  }
+
+  return `${fillIn(hourTime)}:${fillIn(minTime)}:${fillIn(seconds)}`;
 }
 
 console.log(humanReadableTimer(0)); // 印出 00:00:00
