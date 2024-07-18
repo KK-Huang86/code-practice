@@ -4,16 +4,16 @@
 
 function findDifferent(numbers) {
   // 實作寫在這裡
-  sortNumbers = numbers.sort((first, last) => {
-    return first - last;
+
+  numbers.sort((first, second) => {
+    return first - second;
   });
 
-  for (let i = 0; i <= sortNumbers.length - 1; i++) {
-    if (sortNumbers[i] == !sortNumber[i + 1]) {
-      return sortNumber[i];
-    }
+  if (numbers[0] !== numbers[1]) {
+    return numbers[0];
+  } else {
+    return numbers[numbers.length - 1];
   }
-  return sortNumber[i];
 }
 
 console.log(findDifferent([1, 1, 1, 1, 3, 1, 1, 1])); // 印出 3
