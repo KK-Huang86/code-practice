@@ -1,4 +1,3 @@
-``;
 // 編號：CANDY-007
 // 程式語言：JavaScript
 // 題目：在某個數字陣列裡，可能藏有某個不合群的奇數或偶數，試著找出它！
@@ -6,21 +5,17 @@
 function findSomeDifferent(numbers) {
   // 實作寫在這裡
 
-  const findOtherNum = [];
-  const findEven = [];
+  const evenNumbers = numbers.filter((num) => {
+    return num % 2 == 0;
+  });
+  const oddNumbers = numbers.filter((num) => {
+    return num % 2 != 0;
+  });
 
-  for (let i = 0; i <= numbers.length - 1; i++) {
-    if (numbers[i] % 2 === 0) {
-      findEven.push(numbers[i]);
-    } else {
-      findOtherNum.push(numbers[i]);
-    }
-  }
-
-  if (findOtherNum.length === 1) {
-    return findOtherNum[0];
+  if (evenNumbers.length == 1) {
+    return evenNumbers[0];
   } else {
-    return findEven[0];
+    return oddNumbers[0];
   }
 }
 
