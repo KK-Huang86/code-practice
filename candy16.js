@@ -6,8 +6,14 @@
 function toCamelCase(str) {
   // 實作寫在這裡
 
-  const Arr = str.split("_");
-  Arr.[0]+Arr[]
+  const strTosplit = str.split("_");
+
+  for (let i = 1; i <= strTosplit.length - 1; i++) {
+    strTosplit[i] =
+      strTosplit[i].charAt(0).toUpperCase() + strTosplit[i].slice(1);
+  }
+
+  return strTosplit.join("");
 }
 
 console.log(toCamelCase("book")); // book

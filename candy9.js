@@ -8,9 +8,8 @@ function removeAnchor(url) {
 
   if (urlIndex > 0) {
     return url.substring(0, urlIndex);
-  } else {
-    return url;
   }
+  return url;
 }
 
 console.log(removeAnchor("5xcampus.com")); // 印出 5xcampus.com
