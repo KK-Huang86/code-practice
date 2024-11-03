@@ -11,3 +11,7 @@ def is_isogram(string):
             return False
         seen.append(char)
     return True
+
+
+def practice(string):
+    lower_string=string.lower()
