@@ -8,4 +8,4 @@ def disemvowel(string_):
   return "".join(check_list)
     
 
-disemvowel("What the Fuck")
+disemvowel("What the hell")
